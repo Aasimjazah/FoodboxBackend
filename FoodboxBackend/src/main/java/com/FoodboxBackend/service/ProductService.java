@@ -33,4 +33,33 @@ public class ProductService {
 	
 	}
 	
+	public Product getProduct(int id)
+	{ 
+		Product product=productRepo.findById(id);
+		return product;
+	}
+	
+	public Product updateProduct(Product product , int id)
+	{
+		Product p=productRepo.findById(id);
+		
+			p.setName(product.getName());
+			p.setKcal(product.getKcal());
+			p.setCategory(product.getCategory());
+			p.setDiscount(product.getDiscount());
+			p.setPrice(product.getPrice());
+			p.setQuantity(product.getQuantity());
+			p.setStatus(product.getStatus());
+			
+			
+		    return productRepo.save(p);
+		
+	}
+	
+	public Product getProductByIdService(int id)
+	{
+		return productRepo.findById(id);
+	}
+
+
 }
