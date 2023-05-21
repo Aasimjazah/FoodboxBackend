@@ -39,5 +39,17 @@ public class ProductController {
 	}
 
 	
+	@PutMapping("/uploadImage/{id}")
+	public void uploadImage(@PathVariable("id") int id,@RequestBody String url)
+	{
+		System.out.println("calling uplaodImage api.....");
+		System.out.println(id);
+		System.out.println(url);
+		
+		Product product=productRepo.findById(id);
+		product.setImgname(url);
+		productRepo.save(product);
+	}
+
 	
 }
