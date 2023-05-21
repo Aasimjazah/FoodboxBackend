@@ -24,5 +24,13 @@ public class ProductService {
 		
      }
 	
+	public List<Product> getProducts()  {
+		
+		 List<Product> products=(List<Product>) productRepo.findAll();
+		 
+		 return products;
+		 
+	
+	}
 	
 }

@@ -33,5 +33,11 @@ public class ProductController {
 		return productService.addProduct(product);
 	}
 
+	@GetMapping("/getProducts")
+	public List<Product> getProducts() {
+		return productService.getProducts();
+	}
+
+	
 	
 }
