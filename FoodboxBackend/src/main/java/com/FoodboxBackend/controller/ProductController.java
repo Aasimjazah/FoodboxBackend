@@ -57,5 +57,11 @@ public class ProductController {
 		return productService.getProductByIdService(id);
 	}
 	
+	@GetMapping("getNameOrCategory/{search}")
+	public ResponseEntity<List<Product>> findProductsByBrandOrCatgegory(@PathVariable("search")String search)
+	{
+		return new ResponseEntity<>(productService.findProductsByNameOrCatgegory(search),HttpStatus.OK);
+	}
+
 	
 }
