@@ -37,7 +37,7 @@ public class ProductController {
 	public List<Product> getProducts() {
 		return productService.getProducts();
 	}
-
+	
 	
 	@PutMapping("/uploadImage/{id}")
 	public void uploadImage(@PathVariable("id") int id,@RequestBody String url)
@@ -50,18 +50,12 @@ public class ProductController {
 		product.setImgname(url);
 		productRepo.save(product);
 	}
-
+	
 	@GetMapping("/getProductById/{id}")
 	public Product getProductById(@PathVariable int id)
 	{
 		return productService.getProductByIdService(id);
 	}
 	
-	@GetMapping("getNameOrCategory/{search}")
-	public ResponseEntity<List<Product>> findProductsByBrandOrCatgegory(@PathVariable("search")String search)
-	{
-		return new ResponseEntity<>(productService.findProductsByNameOrCatgegory(search),HttpStatus.OK);
-	}
-
 	
 }
