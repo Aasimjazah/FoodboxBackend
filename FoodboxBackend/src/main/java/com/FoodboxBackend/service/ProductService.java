@@ -33,4 +33,9 @@ public class ProductService {
 	
 	}
 	
+	public Product getProductByIdService(int id)
+	{
+		return productRepo.findById(id);
+	}
+	
 }
